@@ -3,6 +3,7 @@ import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 import logo from "../assets/nuova-salute.png";
 import whatsapp from "../assets/WhatsApp.svg.webp";
+import { Menu, X } from "@lucide/astro";
 ---
 
 <header>
@@ -10,7 +11,9 @@ import whatsapp from "../assets/WhatsApp.svg.webp";
     <a style="padding: 0" href="/"
       ><img src={logo.src} alt="{SITE_TITLE} Logo" width="120" /></a
     >
-    <div class="internal-links">
+    
+    <!-- Desktop Menu -->
+    <div class="internal-links desktop-only">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/servizi">Servizi</HeaderLink>
       <HeaderLink href="/contatti">Contatti</HeaderLink>
@@ -18,7 +21,7 @@ import whatsapp from "../assets/WhatsApp.svg.webp";
       <HeaderLink href="/professionisti">Professionisti</HeaderLink>
     </div>
 
-    <div class="social-links">
+    <div class="social-links desktop-only">
       <div class="phone-number">
         <a
           href="tel:+39123456789"
@@ -30,49 +33,263 @@ import whatsapp from "../assets/WhatsApp.svg.webp";
 		<img width="32" height="32" src={whatsapp.src} />
       </a>
     </div>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger-menu mobile-only" id="mobileMenuBtn" type="button">
+      <Menu size={28} />
+    </button>
   </nav>
+
+  <!-- Mobile Sidebar -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <button class="close-sidebar" id="closeSidebarBtn" type="button">
+        <X size={28} />
+      </button>
+    </div>
+    <div class="sidebar-nav">
+      <a href="/">Home</a>
+      <a href="/servizi">Servizi</a>
+      <a href="/contatti">Contatti</a>
+      <a href="/galleria">Galleria</a>
+      <a href="/professionisti">Professionisti</a>
+    </div>
+    <div class="sidebar-footer">
+      <a href="tel:+39123456789">+39 123 456 789</a>
+      <a href="https://www.whatsapp.com/" target="_blank">
+        <img width="24" height="24" src={whatsapp.src} alt="WhatsApp" />
+      </a>
+    </div>
+  </div>
 </header>
+
 <style>
   header {
     margin: 0;
     padding: 0 1em;
     background: white;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
-  }
-  h2 {
-    margin: 0;
-    font-size: 1em;
+    position: relative;
   }
 
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 70px;
   }
+
   nav a {
     padding: 1em 0.5em;
     color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none;
   }
+
   nav a.active {
     text-decoration: none;
     border-bottom-color: var(--accent);
   }
-  .social-links,
+
+  .internal-links {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+  }
+
+  .phone-number a {
+    padding: 0;
+    border-bottom: none;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .phone-number a:hover {
+    color: var(--accent);
+  }
+
   .social-links a {
     display: flex;
+    align-items: center;
+    padding: 0;
+    border-bottom: none;
   }
-  @media (max-width: 720px) {
-    .social-links {
+
+  /* Hamburger Button */
+  .hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-menu:hover {
+    color: var(--accent);
+  }
+
+  /* Mobile Sidebar */
+  .mobile-sidebar {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-sidebar.open {
+    right: 0;
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    border-bottom: 1px solid #eee;
+  }
+
+  .close-sidebar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close-sidebar:hover {
+    color: var(--accent);
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .sidebar-nav a {
+    padding: 1em 1.5em;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: none;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .sidebar-nav a:hover {
+    background: #f5f5f5;
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+
+  .sidebar-footer {
+    padding: 1em;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .sidebar-footer a {
+    padding: 0.75em;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .sidebar-footer a:hover {
+    color: var(--accent);
+  }
+
+  /* Desktop/Mobile Toggle */
+  .desktop-only {
+    display: flex;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-only {
       display: none;
     }
-    .phone-number {
-      display: none;
+
+    .mobile-only {
+      display: flex;
     }
+
+    nav {
+      justify-content: space-between;
+    }
+  }
+
+  /* Prevent scroll when sidebar is open */
+  :global(body.sidebar-open) {
+    overflow: hidden;
   }
 </style>
+
+<script>
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+  const mobileSidebar = document.getElementById("mobileSidebar");
+
+  if (mobileMenuBtn && closeSidebarBtn && mobileSidebar) {
+    // Open sidebar
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileSidebar.classList.add("open");
+      document.body.classList.add("sidebar-open");
+    });
+
+    // Close sidebar
+    closeSidebarBtn.addEventListener("click", () => {
+      mobileSidebar.classList.remove("open");
+      document.body.classList.remove("sidebar-open");
+    });
+
+    // Close sidebar when clicking on a link
+    const sidebarLinks = mobileSidebar.querySelectorAll("a");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileSidebar.classList.remove("open");
+        document.body.classList.remove("sidebar-open");
+      });
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        mobileSidebar.classList.contains("open") &&
+        !mobileSidebar.contains(target) &&
+        !mobileMenuBtn.contains(target)
+      ) {
+        mobileSidebar.classList.remove("open");
+        document.body.classList.remove("sidebar-open");
+      }
+    });
+  }
+</script>
