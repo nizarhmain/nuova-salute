@@ -1,11 +1,12 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import logo from "../assets/nuova-salute.png";
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a style="padding: 0" href="/"><img src={logo.src} alt="{SITE_TITLE} Logo" width="120"/></a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/servizi">Servizi</HeaderLink>
