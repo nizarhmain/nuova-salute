@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Contatti`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto px-6 max-w-2xl">
+			<h1 class="text-4xl font-bold leading-tight mb-4">Contattaci</h1>
+			<p class="leading-relaxed">Siamo qui per rispondere alle tue domande e aiutarti.</p>
+			<section>
+				<h2 class="text-2xl font-bold mt-8 mb-3">Informazioni di Contatto</h2>
+				<ul class="my-4 pl-8">
+					<li class="my-2 leading-relaxed"><strong class="font-bold">Email:</strong> info@nuovasalute.it</li>
+					<li class="my-2 leading-relaxed"><strong class="font-bold">Telefono:</strong> +39 XXX XXX XXXX</li>
+					<li class="my-2 leading-relaxed"><strong class="font-bold">Indirizzo:</strong> [Inserire indirizzo]</li>
+					<li class="my-2 leading-relaxed"><strong class="font-bold">Orari:</strong> Lunedì - Venerdì: 9:00 - 18:00</li>
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Servizi`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto px-6 max-w-2xl">
+			<h1 class="text-4xl font-bold leading-tight mb-4">I Nostri Servizi</h1>
+			<p class="leading-relaxed">Scopri gli innovativi servizi che offriamo per il tuo benessere.</p>
+			<section>
+				<h2 class="text-2xl font-bold mt-8 mb-3">Servizi Disponibili</h2>
+				<ul class="my-4 pl-8">
+					<li class="my-2">Consulenza medica</li>
+					<li class="my-2">Terapie specializzate</li>
+					<li class="my-2">Programmi di wellness</li>
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
