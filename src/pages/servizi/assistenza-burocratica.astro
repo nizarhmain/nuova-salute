@@ -1,0 +1,53 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Clipboard } from '@lucide/astro';
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Assistenza Burocratica e Amministrativa`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto px-6 max-w-4xl py-16">
+			<div class="flex items-center gap-4 mb-8">
+				<Clipboard size={100} class="text-primary" />
+				<h1 class="text-4xl font-bold">Assistenza Burocratica e Amministrativa</h1>
+			</div>
+
+			<div class="prose prose-lg max-w-none">
+				<p class="text-lg text-gray-700 mb-6">
+					Semplifichiamo la gestione delle tue pratiche amministrative e burocratiche, permettendoti di concentrarti sulla tua salute e serenità mentale.
+				</p>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Servizi Inclusi</h2>
+				<ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+					<li>Gestione documentazione sanitaria</li>
+					<li>Richieste di rimborsi e prestazioni</li>
+					<li>Comunicazione con strutture sanitarie</li>
+					<li>Organizzazione visite mediche e appuntamenti</li>
+					<li>Pratiche INPS e assistenza sociale</li>
+					<li>Supporto nella compilazione di moduli</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Perché Affidarsi a Noi</h2>
+				<p class="text-gray-700 mb-6">
+					La nostra esperienza garantisce una corretta gestione di tutti gli aspetti burocratici. Evita stress e confusione affidandoti ai nostri specialisti, che conoscono perfettamente il sistema sanitario e amministrativo italiano.
+				</p>
+
+				<div class="bg-blue-50 border-l-4 border-primary p-6 my-8">
+					<p class="text-gray-800 font-semibold">Semplifichiamo la burocrazia per te. Contattaci per una consulenza.</p>
+				</div>
+			</div>
+
+			<div class="mt-12">
+				<a href="/servizi" class="text-primary font-semibold hover:underline">← Torna ai Servizi</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

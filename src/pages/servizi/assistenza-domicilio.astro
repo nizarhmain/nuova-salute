@@ -1,0 +1,53 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Home } from '@lucide/astro';
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Assistenza a Domicilio`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto px-6 max-w-4xl py-16">
+			<div class="flex items-center gap-4 mb-8">
+				<Home size={100} class="text-primary" />
+				<h1 class="text-4xl font-bold">Assistenza a Domicilio</h1>
+			</div>
+
+			<div class="prose prose-lg max-w-none">
+				<p class="text-lg text-gray-700 mb-6">
+					Offriamo servizi di assistenza completa direttamente a casa tua, permettendoti di ricevere cure di qualità nel comfort del tuo ambiente familiare.
+				</p>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Servizi Forniti</h2>
+				<ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+					<li>Assistenza nella mobilità e deambulazione</li>
+					<li>Supporto nella cura della persona</li>
+					<li>Aiuto nelle attività quotidiane</li>
+					<li>Preparazione dei pasti e alimentazione</li>
+					<li>Pulizia e organizzazione della casa</li>
+					<li>Compagnia e supporto emotivo</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Chi Può Beneficiarne</h2>
+				<p class="text-gray-700 mb-6">
+					Anziani, persone in convalescenza, disabili e chiunque abbia bisogno di supporto per le attività quotidiane. I nostri operatori sono addestrati per fornire assistenza rispettosa e professionale.
+				</p>
+
+				<div class="bg-blue-50 border-l-4 border-primary p-6 my-8">
+					<p class="text-gray-800 font-semibold">Contattaci per una valutazione gratuita delle tue esigenze di assistenza domiciliare.</p>
+				</div>
+			</div>
+
+			<div class="mt-12">
+				<a href="/servizi" class="text-primary font-semibold hover:underline">← Torna ai Servizi</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

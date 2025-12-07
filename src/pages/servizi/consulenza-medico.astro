@@ -1,0 +1,58 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Stethoscope } from '@lucide/astro';
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Consulenza con Medico`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto px-6 max-w-4xl py-16">
+			<div class="flex items-center gap-4 mb-8">
+				<Stethoscope size={100} class="text-primary" />
+				<h1 class="text-4xl font-bold">Consulenza con Medico</h1>
+			</div>
+
+			<div class="prose prose-lg max-w-none">
+				<p class="text-lg text-gray-700 mb-6">
+					Accedi a consulenze mediche professionali da parte dei nostri medici esperti, disponibili per visite domiciliari e teleconsultazioni.
+				</p>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Servizi di Consulenza</h2>
+				<ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+					<li>Visita medica domiciliare</li>
+					<li>Teleconsultazione con medico specialista</li>
+					<li>Valutazione dello stato di salute</li>
+					<li>Prescrizioni e piani di trattamento</li>
+					<li>Consigli preventivi e stile di vita</li>
+					<li>Monitoraggio di condizioni croniche</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">I Nostri Medici</h2>
+				<p class="text-gray-700 mb-6">
+					Disponiamo di un team di medici qualificati con specializzazioni diverse. Ogni medico porta con sé anni di esperienza e un approccio personalizzato alla cura del paziente.
+				</p>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Come Prenotare</h2>
+				<p class="text-gray-700 mb-6">
+					Contattaci per prenotare una consulenza. Offriamo flessibilità negli orari e diverse modalità di consultazione per adattarsi alle tue necessità.
+				</p>
+
+				<div class="bg-blue-50 border-l-4 border-primary p-6 my-8">
+					<p class="text-gray-800 font-semibold">Prenota una consulenza medica oggi. La tua salute è la nostra priorità.</p>
+				</div>
+			</div>
+
+			<div class="mt-12">
+				<a href="/servizi" class="text-primary font-semibold hover:underline">← Torna ai Servizi</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

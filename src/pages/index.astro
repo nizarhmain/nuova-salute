@@ -13,6 +13,10 @@ import {
   Network,
   Target,
   FileText,
+  Ambulance,
+  Home,
+  Dumbbell,
+  Clipboard,
 } from "@lucide/astro";
 ---
 
@@ -57,42 +61,78 @@ import {
       </section>
 
       <!-- Services Section with Buttons -->
-      <section class="mx-auto max-w-6xl">
+      <section class="mx-auto max-w-6xl px-6 py-16">
         <h2 class="text-3xl font-bold mb-12">I Nostri Servizi</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
             class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
           >
             <a
-              href="/servizi/consulenza-medica"
-              class="flex flex-col justify-between size-full"
+              href="/servizi/assistenza-infermieristica"
+              class="flex flex-col justify-between items-center size-full text-center"
+            >
+              <HandHeart size={36} />
+              <p>Assistenza Infermieristica</p>
+            </a>
+          </div>
+
+          <div
+            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
+          >
+            <a
+              href="/servizi/assistenza-domicilio"
+              class="flex flex-col justify-between items-center size-full text-center"
+            >
+              <Home size={36} />
+              <p>Assistenza a Domicilio</p>
+            </a>
+          </div>
+
+          <div
+            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
+          >
+            <a
+              href="/servizi/fisioterapia-domicilio"
+              class="flex flex-col justify-between items-center size-full text-center"
+            >
+              <Dumbbell size={36} />
+              <p>Fisioterapia a Domicilio</p>
+            </a>
+          </div>
+
+          <div
+            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
+          >
+            <a
+              href="/servizi/assistenza-burocratica"
+              class="flex flex-col justify-between items-center size-full text-center"
+            >
+              <Clipboard size={36} />
+              <p>Ass. Burocratica e Amministrativa</p>
+            </a>
+          </div>
+
+          <div
+            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
+          >
+            <a
+              href="/servizi/trasporto-ambulanza"
+              class="flex flex-col justify-between items-center size-full text-center"
+            >
+              <Ambulance size={36} />
+              <p>Trasporto in Ambulanza</p>
+            </a>
+          </div>
+
+          <div
+            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
+          >
+            <a
+              href="/servizi/consulenza-medico"
+              class="flex flex-col justify-between items-center size-full text-center"
             >
               <Stethoscope size={36} />
-              <p>Consulenza Medica</p>
-            </a>
-          </div>
-
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/servizi/terapie-specializzate"
-              class="flex flex-col justify-between size-full"
-            >
-              <HandHeart size={36} />
-              <p>Terapie Specializzate</p>
-            </a>
-          </div>
-
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/servizi/programmi-wellness"
-              class="flex flex-col justify-between size-full"
-            >
-              <HandHeart size={36} />
-              <p>Programmi di Wellness</p>
+              <p>Consulenza con Medico</p>
             </a>
           </div>
         </div>
@@ -108,7 +148,7 @@ import {
       </section>
 
       <!-- Strengths Section: 5 Circle Points -->
-      <section class="mx-auto max-w-6xl py-24">
+      <section class="mx-auto max-w-6xl py-16">
         <h2 class="text-3xl font-bold mb-12">I Nostri Punti di Forza</h2>
         <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
           <!-- Point 1: 24/7 -->
@@ -144,9 +184,9 @@ import {
       </section>
 
       <!-- Booking Form Section -->
-      <section class="py-16">
-        <h2 class="text-3xl font-bold mb-8">Prenota Ora</h2>
-        <form class="space-y-6">
+      <section class="py-1">
+        <h2 class="text-3xl font-bold mb-4">Prenota Ora</h2>
+        <form class="space-y-3">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="nome" class="block text-gray-700 font-semibold mb-2"
@@ -228,7 +268,7 @@ import {
       </section>
 
       <!-- Location Section -->
-      <section class="mx-auto max-w-6xl py-16">
+      <section class="mx-auto max-w-6xl">
         <h2 class="text-3xl font-bold mb-8">Trovaci</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>

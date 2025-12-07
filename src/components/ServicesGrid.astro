@@ -1,0 +1,98 @@
+---
+import {
+  HandHeart,
+  Stethoscope,
+  Home,
+  Dumbbell,
+  Clipboard,
+  Ambulance,
+} from "@lucide/astro";
+
+interface Props {
+  showTitle?: boolean;
+  showButton?: boolean;
+  iconSize?: number;
+  compact?: boolean;
+}
+
+const {
+  showTitle = true,
+  showButton = true,
+  iconSize = 36,
+  compact = false,
+} = Astro.props;
+
+const services = [
+  {
+    href: "/servizi/assistenza-infermieristica",
+    icon: HandHeart,
+    title: "Assistenza Infermieristica",
+    description: "Cure professionali e compassionevoli direttamente a casa tua.",
+  },
+  {
+    href: "/servizi/assistenza-domicilio",
+    icon: Home,
+    title: "Assistenza a Domicilio",
+    description: "Supporto completo per le tue attività quotidiane.",
+  },
+  {
+    href: "/servizi/fisioterapia-domicilio",
+    icon: Dumbbell,
+    title: "Fisioterapia a Domicilio",
+    description: "Riabilitazione e mobilità nel comfort della tua casa.",
+  },
+  {
+    href: "/servizi/assistenza-burocratica",
+    icon: Clipboard,
+    title: "Ass. Burocratica e Amministrativa",
+    description: "Semplifichiamo le tue pratiche amministrative.",
+  },
+  {
+    href: "/servizi/trasporto-ambulanza",
+    icon: Ambulance,
+    title: "Trasporto in Ambulanza",
+    description: "Trasporto sicuro e confortevole 24/7.",
+  },
+  {
+    href: "/servizi/consulenza-medico",
+    icon: Stethoscope,
+    title: "Consulenza con Medico",
+    description: "Consulenze mediche professionali e accessibili.",
+  },
+];
+---
+
+<section class={"mx-auto max-w-6xl"}>
+  {showTitle && <h2 class="text-3xl font-bold mb-12">I Nostri Servizi</h2>}
+
+  <div class={`grid grid-cols-1 ${compact ? "md:grid-cols-2 lg:grid-cols-3 gap-4" : "md:grid-cols-2 lg:grid-cols-3 gap-6"}`}>
+    {services.map((service) => {
+      const IconComponent = service.icon;
+      return (
+        <div class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md">
+          <a
+            href={service.href}
+            class="flex flex-col justify-between items-center size-full text-center"
+          >
+            <IconComponent size={iconSize} />
+            <p class={compact ? "text-sm" : ""}>{service.title}</p>
+            {!compact && (
+              <p class="text-white-700 text-sm">{service.description}</p>
+            )}
+          </a>
+        </div>
+      );
+    })}
+  </div>
+
+  {showButton && (
+    <div class="flex justify-center mt-12">
+      <a
+        href="/servizi"
+        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-lg transition duration-200"
+      >
+        Scopri Tutti i Servizi
+      </a>
+    </div>
+  )}
+</section>

@@ -1,0 +1,53 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { HandHeart } from '@lucide/astro';
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<BaseHead title={`${SITE_TITLE} - Assistenza Infermieristica`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto px-6 max-w-4xl py-16">
+			<div class="flex items-center gap-4 mb-8">
+				<HandHeart size={100} class="text-primary" />
+				<h1 class="text-4xl font-bold">Assistenza Infermieristica</h1>
+			</div>
+
+			<div class="prose prose-lg max-w-none">
+				<p class="text-lg text-gray-700 mb-6">
+					Il nostro servizio di assistenza infermieristica fornisce cure professionali e compassionevoli direttamente a casa tua. I nostri infermieri qualificati sono disponibili per supportare la tua salute e il tuo benessere.
+				</p>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Cosa Offriamo</h2>
+				<ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+					<li>Monitoraggio dei parametri vitali</li>
+					<li>Somministrazione di farmaci</li>
+					<li>Medicazioni e cambio bende</li>
+					<li>Cateterismo e gestione dei drenaggi</li>
+					<li>Assistenza igienico-personale</li>
+					<li>Supporto post-operatorio</li>
+				</ul>
+
+				<h2 class="text-2xl font-bold mt-8 mb-4">Perché Sceglierci</h2>
+				<p class="text-gray-700 mb-6">
+					I nostri infermieri sono esperti e certificati, con anni di pratica nel settore. Offriamo servizi personalizzati in base alle tue esigenze specifiche, garantendo comfort e dignità durante il trattamento.
+				</p>
+
+				<div class="bg-blue-50 border-l-4 border-primary p-6 my-8">
+					<p class="text-gray-800 font-semibold">Contattaci oggi per saperne di più sui nostri servizi di assistenza infermieristica.</p>
+				</div>
+			</div>
+
+			<div class="mt-12">
+				<a href="/servizi" class="text-primary font-semibold hover:underline">← Torna ai Servizi</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

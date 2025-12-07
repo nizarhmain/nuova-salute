@@ -1,29 +1,41 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <!doctype html>
 <html lang="it">
-	<head>
-		<BaseHead title={`${SITE_TITLE} - Servizi`} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main class="mx-auto px-6 max-w-2xl">
-			<h1 class="text-4xl font-bold leading-tight mb-4">I Nostri Servizi</h1>
-			<p class="leading-relaxed">Scopri gli innovativi servizi che offriamo per il tuo benessere.</p>
-			<section>
-				<h2 class="text-2xl font-bold mt-8 mb-3">Servizi Disponibili</h2>
-				<ul class="my-4 pl-8">
-					<li class="my-2">Consulenza medica</li>
-					<li class="my-2">Terapie specializzate</li>
-					<li class="my-2">Programmi di wellness</li>
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} - Servizi`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <main class="mx-auto px-6 max-w-6xl py-16">
+      <h1 class="text-4xl font-bold leading-tight mb-4">I Nostri Servizi</h1>
+      <p class="leading-relaxed mb-12">
+        Scopri gli innovativi servizi che offriamo per il tuo benessere. Ogni
+        servizio è progettato per garantire la migliore qualità di cure e
+        assistenza.
+      </p>
+
+      <ServicesGrid showTitle={false} showButton={false} />
+
+      <div class="mt-12 bg-blue-50 border-l-4 border-primary p-6 rounded">
+        <p class="text-gray-800 mb-4">Interessato a uno dei nostri servizi?</p>
+        <a
+          href="/contatti"
+          class="bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded transition"
+        >
+          Contattaci Oggi
+        </a>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
