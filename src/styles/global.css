@@ -58,7 +58,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
+	margin: 0 0 0 0;
 	line-height: 1.2;
 }
 h1 {
@@ -148,3 +148,15 @@ section {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+  .service-card {
+    @apply bg-white rounded-xl p-6 border border-gray-100 transition-all duration-300 ease-in-out drop-shadow-2xl hover:shadow-lg hover:-translate-y-1 cursor-pointer;
+  }
+
+  .icon-wrapper {
+    @apply mb-4 inline-flex items-center justify-center;
+  }
+
+  .service-card:hover .icon-wrapper {
+    @apply scale-110 transition-transform duration-300;
+  } 

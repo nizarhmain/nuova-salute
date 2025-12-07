@@ -18,6 +18,7 @@ import {
   Dumbbell,
   Clipboard,
 } from "@lucide/astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
 ---
 
 <!doctype html>
@@ -61,81 +62,8 @@ import {
       </section>
 
       <!-- Services Section with Buttons -->
-      <section class="mx-auto max-w-6xl  py-16">
-        <h2 class="text-3xl font-bold mb-12">I Nostri Servizi</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/nuova-salute/servizi/assistenza-infermieristica"
-              class="flex flex-col justify-between items-center size-full text-center"
-            >
-              <HandHeart size={36} />
-              <p>Assistenza Infermieristica</p>
-            </a>
-          </div>
-
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/nuova-salute/servizi/assistenza-domicilio"
-              class="flex flex-col justify-between items-center size-full text-center"
-            >
-              <Home size={36} />
-              <p>Assistenza a Domicilio</p>
-            </a>
-          </div>
-
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/nuova-salute/servizi/fisioterapia-domicilio"
-              class="flex flex-col justify-between items-center size-full text-center"
-            >
-              <Dumbbell size={36} />
-              <p>Fisioterapia a Domicilio</p>
-            </a>
-          </div>
-
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/nuova-salute/servizi/assistenza-burocratica"
-              class="flex flex-col justify-between items-center size-full text-center"
-            >
-              <Clipboard size={36} />
-              <p>Ass. Burocratica e Amministrativa</p>
-            </a>
-          </div>
-
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/nuova-salute/servizi/trasporto-ambulanza"
-              class="flex flex-col justify-between items-center size-full text-center"
-            >
-              <Ambulance size={36} />
-              <p>Trasporto in Ambulanza</p>
-            </a>
-          </div>
-
-          <div
-            class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md"
-          >
-            <a
-              href="/nuova-salute/servizi/consulenza-medico"
-              class="flex flex-col justify-between items-center size-full text-center"
-            >
-              <Stethoscope size={36} />
-              <p>Consulenza con Medico</p>
-            </a>
-          </div>
-        </div>
+      <section class="mx-auto max-w-6xl py-16">
+        <ServicesGrid showTitle={false} showButton={false} />
 
         <div class="flex justify-center mt-12">
           <a
@@ -184,7 +112,7 @@ import {
       </section>
 
       <!-- Booking Form Section -->
-      <section class="py-1">
+      <section class="py-3 drop-shadow-lg mx-auto max-w-6xl mb-16 p-8 bg-white rounded-lg -mx-3">
         <h2 class="text-3xl font-bold mb-4">Prenota Ora</h2>
         <form class="space-y-3">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

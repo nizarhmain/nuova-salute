@@ -42,6 +42,7 @@ import { Menu, X } from "@lucide/astro";
   <!-- Mobile Sidebar -->
   <div class="mobile-sidebar" id="mobileSidebar">
     <div class="sidebar-header">
+	  <h5> Nuova Salute</h5>
       <button class="close-sidebar" id="closeSidebarBtn" type="button">
         <X size={28} />
       </button>
@@ -163,7 +164,8 @@ import { Menu, X } from "@lucide/astro";
 
   .sidebar-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+	align-items: center;
     padding: 1em;
     border-bottom: 1px solid #eee;
   }

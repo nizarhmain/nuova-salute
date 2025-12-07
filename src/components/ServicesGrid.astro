@@ -63,21 +63,23 @@ const services = [
 ---
 
 <section class={"mx-auto max-w-6xl"}>
-  {showTitle && <h2 class="text-3xl font-bold mb-12">I Nostri Servizi</h2>}
+  {showTitle && <h2 class="text-3xl font-bold mb-12 text-gray-900">I Nostri Servizi</h2>}
 
   <div class={`grid grid-cols-1 ${compact ? "md:grid-cols-2 lg:grid-cols-3 gap-4" : "md:grid-cols-2 lg:grid-cols-3 gap-6"}`}>
     {services.map((service) => {
       const IconComponent = service.icon;
       return (
-        <div class="link-box flex gap-2 justify-center items-center p-4 drop-shadow-md">
+        <div class="service-card">
           <a
             href={service.href}
-            class="flex flex-col justify-between items-center size-full text-center"
+            class="flex flex-col justify-between items-center size-full text-center h-full"
           >
-            <IconComponent size={iconSize} />
-            <p class={compact ? "text-sm" : ""}>{service.title}</p>
+            <div class="icon-wrapper">
+              <IconComponent size={iconSize} class="text-secondary" />
+            </div>
+            <p class={`font-semibold text-gray-900 ${compact ? "text-sm" : "text-base"}`}>{service.title}</p>
             {!compact && (
-              <p class="text-white-700 text-sm">{service.description}</p>
+              <p class="text-gray-600 text-sm leading-relaxed">{service.description}</p>
             )}
           </a>
         </div>
@@ -89,7 +91,7 @@ const services = [
     <div class="flex justify-center mt-12">
       <a
         href="/nuova-salute/servizi"
-        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-lg transition duration-200"
+        class="bg-secondary hover:bg-red-700 text-white font-bold py-3 px-12 rounded-lg transition duration-200 shadow-lg hover:shadow-xl"
       >
         Scopri Tutti i Servizi
       </a>
