@@ -127,6 +127,10 @@ hr {
 	}
 }
 
+section {
+	@apply flex flex-col gap-12
+}
+
 .sr-only {
 	border: 0;
 	padding: 0;
